@@ -5,7 +5,7 @@ import UserDataProvider from '../hook/userDataProvider'
 function PostDashboard() {
   return (
     <UserDataProvider>
-      <div>
+      <div className='grid gap-4 grid-cols-1'>
         <TrendingPosts/>
         <UserMostPost/>
       </div>

@@ -47,7 +47,7 @@ if (trandingPost.length === 0) return <div>No trending posts found.</div>;
   return (
     <div className="p-4 border rounded-xl shadow-md">
         <h2>Trending Posts</h2>
-      <div className="flex gap-2 mb-4">
+      <div className=" grid grid-cols-3 gap-2 mb-4">
         <Button variant="outline" onClick={() => handleSort("likes")}>
           Sort by Likes
         </Button>
