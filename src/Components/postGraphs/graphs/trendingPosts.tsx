@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState ,useMemo} from "react";
 import {
   Table,
   TableHeader,
@@ -28,8 +28,10 @@ export const TrendingPosts: React.FC = () => {
 
 const {posts}=useUserData()
 const [data, setData] = useState<Post[]|null>([])
-const trandingPost = posts ? posts.filter(post => post.is_trending !== false) : [];
-;
+  const trandingPost = useMemo(
+    () => posts ? posts.filter(post => post.is_trending !== false) : [],
+    [posts]
+  );
 
 
 
@@ -39,7 +41,7 @@ const trandingPost = posts ? posts.filter(post => post.is_trending !== false) : 
   };
 useEffect(()=>{
 setData(trandingPost)
-})
+},[trandingPost])
 if (!posts) return <div>Loading...</div>;
 if (trandingPost.length === 0) return <div>No trending posts found.</div>;
   return (
