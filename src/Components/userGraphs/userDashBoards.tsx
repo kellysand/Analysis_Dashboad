@@ -22,27 +22,26 @@ function UserDashBoards() {
         </TabsList>
 
         <TabsContent value="overview">
-          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  gap-6">
-            <div> <PieGraphes /></div> 
-             <div><UserAgeBar/></div> 
-           <div className="col-start-1 col-span-2 "><UserloginOvertime /></div>
-            <div><UserGender/></div>
-
-          
+          <section className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+            <div className="w-full"><PieGraphes /></div>
+            <div className="w-full"><UserAgeBar /></div>
+            <div className="col-span-1 md:col-span-2 w-full"><UserloginOvertime /></div>
+            <div className="w-full"><UserGender /></div>
           </section>
         </TabsContent>
 
         <TabsContent value="growth">
-          <NewUserGrowth />
+          <section className="w-full flex flex-col items-stretch">
+            <NewUserGrowth />
+          </section>
         </TabsContent>
 
         <TabsContent value="countries/Business">
-          <section className="grid grid-cols-2 grid-rows-2 gap-4">
-            <div className="flex-1"><UserCountryChart /></div>
-            <div className="flex-1"> <UserCompaniesBar /></div>
-            <div className="col-span-2 row-start-2"><CompanySector/></div>
-            </section>
-           
+          <section className="grid gap-4 grid-cols-1 md:grid-cols-2 md:grid-rows-2">
+            <div className="w-full"><UserCountryChart /></div>
+            <div className="w-full"><UserCompaniesBar /></div>
+            <div className="md:col-span-2 w-full"><CompanySector /></div>
+          </section>
         </TabsContent>
 
       </Tabs>
